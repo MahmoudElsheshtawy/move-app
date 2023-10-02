@@ -2,7 +2,10 @@ import React from 'react'
 
 const Watchedlist = () => {
   return (
-    <div>Watchedlist</div>
+    <div >
+              
+              Watchedlist
+      </div>
   )
 }
 
