@@ -1,5 +1,6 @@
 import React from 'react'
-// import { MovieControls } from './MovieControls'
+import MovieControls from './MovieControls'
+
 
 export const MovieCard = ({movie , type}) => {
   return (
@@ -10,7 +11,7 @@ export const MovieCard = ({movie , type}) => {
                     <img src={movie.Poster} alt={movie.Title}></img>
                 ): <div className='filter-poster'></div>
         }
-        {/* <MovieControls movie={movie} type={type}/> */}
+        <MovieControls movie={movie} type={type}/>
     </div>
   )
 }

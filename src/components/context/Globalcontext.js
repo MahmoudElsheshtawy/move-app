@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 const initailstate ={
-    watched:[],
+  Watched:[],
     watchlist:[],
 }
 const reducer = (state , action)=>{
@@ -20,18 +20,18 @@ const reducer = (state , action)=>{
           return{
             ...state,
             watchlist : state.watchlist.filter((movie)=> movie.imdbID !== action.payload.imdbID),
-            watched : [action.payload , ...state.watched] // add move in whached and remove move list
+            Watched : [action.payload , ...state.Watched] // add move in whached and remove move list
           }
           case 'MOVE_TO_WATCHLIST':
             return{
               ...state,
-              watched : state.watched.filter((movie)=> movie.imdbID !== action.payload.imdbID),
+              Watched : state.Watched.filter((movie)=> movie.imdbID !== action.payload.imdbID),
               watchlist : [action.payload , ...state.watchlist] // add to whatch list,and save my prev movise
             }
         case 'REMOVE_FROM_WATCHED':
           return{
             ...state,
-            watched : state.watched.filter((movie)=> movie.imdbID !== action.payload)
+            Watched : state.Watched.filter((movie)=> movie.imdbID !== action.payload)
           }
         default:
             return state
@@ -44,7 +44,7 @@ const GlobleProvider =(props)=>{
     
     const [state,dispatch]=useReducer(reducer,initailstate);
 return(
-    <GlobalContext.Provider value={{watchlist: state.watchlist, watched: state.watched ,MoviesDispatch:dispatch }}>
+    <GlobalContext.Provider value={{watchlist: state.watchlist, Watched: state.Watched ,MoviesDispatch:dispatch }}>
          {props.children}
      </GlobalContext.Provider>
 )

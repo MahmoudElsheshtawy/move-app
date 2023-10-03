@@ -7,7 +7,7 @@ import {GlobalContext} from'./context/Globalcontext'
 const ResultCard = ({movie}) => {
   // const {MoviesDispatch} = useMoveContext();
   // const {MoviesDispatch , wahtchlist , wahched} = useMoveContext()
-  const {MoviesDispatch , watchlist , watched} = useContext(GlobalContext)
+  const {MoviesDispatch } = useContext(GlobalContext)
 
 
   return (

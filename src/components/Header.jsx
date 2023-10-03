@@ -13,7 +13,8 @@ const Header = () => {
                 <Link to="/" style={{textDecoration:'none'}}>Watch List</Link>
               </li>
               <li>
-                <Link to="/Watched" style={{textDecoration:'none'}}>Watched</Link>
+                <Link to="/Watched" style={{textDecoration:'none'}}>       Watched  
+</Link>
               </li>
               <li>
                 <Link to="/Add" style={{textDecoration:'none'}} className='btn'>Add</Link>
