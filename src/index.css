@@ -102,3 +102,9 @@ header a:hover {
 .result-card .controls button {
   margin-right: 10px;
 }
+/* cart move */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,minmax(23rem, 1fr));
+  gap: 1.5rem;
+}
