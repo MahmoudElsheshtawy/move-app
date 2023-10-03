@@ -4,7 +4,7 @@ import MovieControls from './MovieControls'
 
 export const MovieCard = ({movie , type}) => {
   return (
-    <div className='movie-card'>
+    <div className='movie-card' >
         <div className="overlay"></div>
         {
                 movie.Poster ? (

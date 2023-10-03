@@ -7,15 +7,17 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 ;
   font-family: "Source Sans Pro", sans-serif;
 
 }
-.container {
+.container-header {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
+
 }
 
 ul li{
@@ -40,8 +42,23 @@ ul li{
   opacity: 1;
   cursor: pointer;
 }
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus {
+  outline: none;
+}
 header {
   background-color: var(--primary);
+  /* position: fixed; */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
 }
 header a {
   color: var(--white);
@@ -103,8 +120,175 @@ header a:hover {
   margin-right: 10px;
 }
 /* cart move */
+/* Movie Page */
+.movie-page {
+  padding: 30px 0;
+}
+
+.movie-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.count-pill {
+  display: block;
+  background-color: var(--secondary);
+  padding: 5px 15px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: var(--primary);
+}
+
+.movie-page .heading {
+  color: var(--primary);
+  margin: 0;
+}
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit ,minmax(19rem, 1fr));
-  gap: 1.5rem;
+  gap: 1.5rem 0;
+}
+.movie-card {
+  padding: 1rem 5rem;
+  width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  display: block;
+  transition: .3s ease-in-out;
+  object-fit: cover;
+}
+
+.movie-card img {
+  width: 100%;
+  
+  height: 100%;
+  display: block;
+  object-fit: cover;
+ 
+}
+.movie-card:hover {
+transform: scale(1.1);
+}
+
+.movie-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.movie-card .inner-card-controls {
+  display: inline;
+  background-color: red;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 3px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover .inner-card-controls {
+  opacity: 1;
+}
+
+.ctrl-btn {
+  color: #fefefe;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  padding: 5px;
+  margin: 0;
+}
+
+.ctrl-btn:hover {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.movie-page .no-movies {
+  color: #c4c4c4;
+  font-size: 3rem;
+  text-align: center;
+}
+@media screen and (max-width:400px) {
+  header a {
+    color: var(--white);
+    font-size: .9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .movie-card {
+    padding: 1rem 4rem;
+ 
+  }
+}
+/* add input */
+.inputbox {
+  position: relative;
+  width: 70%;
+  margin: auto;
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+  color: #45f3ff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 35px;
 }

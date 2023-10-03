@@ -7,9 +7,12 @@ import {GlobalContext} from'./context/Globalcontext'
 const ResultCard = ({movie}) => {
   // const {MoviesDispatch} = useMoveContext();
   // const {MoviesDispatch , wahtchlist , wahched} = useMoveContext()
-  const {MoviesDispatch } = useContext(GlobalContext)
-
-
+  const {MoviesDispatch ,Watched ,watchlist } = useContext(GlobalContext)
+  const Sroremovielist =watchlist.find((find)=>find.imdbID ===movie.imdbID)// لو الفيلم متخزن  return true 
+  const SroremovieWatched =Watched.find((find)=>find.imdbID ===movie.imdbID)
+    
+    const watchlistdisapbe = Sroremovielist ? true : SroremovieWatched ? true: false
+    const watchedDisabled = SroremovieWatched ? true: false
   return (
     <div className='result-card'>
         <div className="poster-wrapper">
@@ -25,13 +28,13 @@ const ResultCard = ({movie}) => {
         <div className="controls" style={{display:'flex'}}>
             <button
               className='btn'
-              // disabled={watchlistDisabled}
+              disabled={watchlistdisapbe}
               onClick={()=>MoviesDispatch({type : 'ADD_MOVIE_TO_WATCHLIST' , payload : movie })}
              >Add to Watchlist
             </button>
             <button
              className='btn'
-              // disabled={watchedDisabled}
+              disabled={watchedDisabled}
               onClick={()=>MoviesDispatch({type : 'ADD_MOVIE_TO_WATCHED' , payload : movie })}
              >Add to Watched
             </button>

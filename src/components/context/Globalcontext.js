@@ -1,7 +1,10 @@
-import { createContext, useContext, useReducer } from "react";
+
+import { createContext, useContext, useEffect, useReducer } from "react";
+// import { json } from "react-router-dom";
 const initailstate ={
-  Watched:[],
-    watchlist:[],
+  // localStorage.getItem("Watched") ? JSON.parse(localStorage.getItem("Watched")):
+  Watched:localStorage.getItem("Watched") ? JSON.parse(localStorage.getItem("Watched")):[],
+    watchlist:localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")):[],
 }
 const reducer = (state , action)=>{
     switch(action.type){
@@ -43,6 +46,13 @@ export const GlobalContext= createContext(initailstate)
 const GlobleProvider =(props)=>{
     
     const [state,dispatch]=useReducer(reducer,initailstate);
+    useEffect(()=>{
+      localStorage.setItem('watchlist' , JSON.stringify(state.watchlist))
+      localStorage.setItem('Watched' , JSON.stringify(state.Watched))
+
+
+
+    } ,[state]) //value changed
 return(
     <GlobalContext.Provider value={{watchlist: state.watchlist, Watched: state.Watched ,MoviesDispatch:dispatch }}>
          {props.children}

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 const Header = () => {
   return (
     <header>
-      <div className="container" >
+      <div className="container-header"  >
         <div className="inner-content" style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
           <div className="brand">
             <Link style={{textDecoration:'none'}} to="/" >Aflam</Link>

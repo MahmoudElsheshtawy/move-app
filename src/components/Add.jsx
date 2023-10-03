@@ -25,13 +25,23 @@ const Add = () => {
 
 
   return (
-    <div className='add-container'>
-      <div className="content">
-        <input type="text" 
+    <div className='add-containerr'>
+      <div className="content" >
+        {/* <input type="text" 
         placeholder='Search for a move...'
         onChange={(e)=>setSearchValue(e.target.value)}
         value={searchValue}
-        />
+        /> */}
+        <div class="inputbox" >
+      
+            <input required="required" type="text"
+            onChange={(e)=>setSearchValue(e.target.value)}
+            value={searchValue}
+            placeholder='Search for a movie...'
+            />
+            {/* <span>Search for a movie...</span> */}
+           <i></i>
+      </div>
       </div>
       {/* if find eny moveis render my felim in the search */}
       {movies.length > 0 &&(<ul className='results'> 

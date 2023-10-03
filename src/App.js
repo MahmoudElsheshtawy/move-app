@@ -9,10 +9,11 @@ function App() {
     // <div className="App">
    <>
   
-      
+    
       
          <Router>
           <GlobleProvider>
+           
           <Header/>
           <Routes>
                         <Route path='/' element={<Watchedlist/>} />

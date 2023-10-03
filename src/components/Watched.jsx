@@ -7,7 +7,7 @@ const Watched = () => {
   return (
     <div className='Watched'>
     <div className="container">
-      <div className="header">
+      <div className="header" style={{padding:'0 20px',display:'flex',alignItems:'center',justifyContent:'center'}}>
       <h1 className='heading'>My Watched</h1>
     <span className='count-pill'>
       
