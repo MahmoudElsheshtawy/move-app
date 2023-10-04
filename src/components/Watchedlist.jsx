@@ -7,7 +7,7 @@ const Watchedlist = () => {
   return (
     <div className="movie-page">
     <div className="container">
-      <div className="header" style={{padding:'0 20px'}}>
+      <div className="header" style={{padding:'40px 20px'}}>
       <h1 className='heading'>My Watchlist</h1>
     <span className='count-pill'>
       {/* count  */}

@@ -26,13 +26,13 @@ const Add = () => {
 
   return (
     <div className='add-containerr'>
-      <div className="content" >
+      <div className="content" style={{padding:'70px 0'}} >
         {/* <input type="text" 
         placeholder='Search for a move...'
         onChange={(e)=>setSearchValue(e.target.value)}
         value={searchValue}
         /> */}
-        <div class="inputbox" >
+        <div class="inputbox"  >
       
             <input required="required" type="text"
             onChange={(e)=>setSearchValue(e.target.value)}
