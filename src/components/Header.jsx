@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className='navbar' style={{backgroundColor:'#aaa',position:'relative'}}>
 
-     <div style={{backgroundColor:'rgb(89 187 232)',position:'fixed',width:'100%',zIndex:'10'}}>
+     <div style={{backgroundColor:'#032541',position:'fixed',width:'100%',zIndex:'10'}}>
      <div className="container-header"  >
         <div className="inner-content" style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
           <div className="brand">
